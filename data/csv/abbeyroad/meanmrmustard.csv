@@ -1,0 +1,9 @@
+I7,V7,2
+I7,VI7,4
+V7,I7,5
+V7,VI7,2
+V7/ii,V7,2
+V7/ii,VII7,2
+VI7,V7,4
+VI7,V7/ii,2
+VII7,V7/ii,2

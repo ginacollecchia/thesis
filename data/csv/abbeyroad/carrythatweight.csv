@@ -1,0 +1,17 @@
+I,V,7
+I,I7,2
+I7,IV7,2
+I7,ii7,2
+ii7,V7,2
+IV7,viio7,2
+V,I,5
+V,V/ii,2
+V,vi7,1
+V7,I,2
+V/ii,I,1
+V7/vi,vi,1
+V7/vi,vi7,1
+vi,vi7,1
+vi7,V,1
+vi7,I7,2
+viio7,V7/vi,2

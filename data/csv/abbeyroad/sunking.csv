@@ -1,0 +1,17 @@
+i7,VI7,1
+I,ii7,7
+I,VI,1
+bII,ii7,1
+bII,VII7,2
+ii7,iii7,8
+iii7,IV,2
+iii7,vi7,8
+IV,VI,1
+IV,bII,1
+VI,i7,1
+VI,VI7,2
+VI7,iii7,2
+VI7,bII,1
+vi7,I,7
+VII7,bII,1
+VII7,VI,1

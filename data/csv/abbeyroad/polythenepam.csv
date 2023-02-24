@@ -1,0 +1,11 @@
+I,V,18
+III,IV,4
+iii,V7,1
+IV,I,18
+IV,iii,1
+IV,V,4
+V,III,2
+V,IV,18
+V,VII,2
+V7/V,III,2
+VII,V7/V,2
