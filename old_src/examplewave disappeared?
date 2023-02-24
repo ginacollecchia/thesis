@@ -1,0 +1,46 @@
+import sys, os, wave, array
+from numpy import *
+from numpy.fft import *
+
+def read_wav_as_array(inputfile):
+	"""takes as input a wav file, outputs a tuple of the data as an array and the params of the wav file as a list"""
+	#Open the file
+	aw = wave.open(inputfile,'r')
+	#Figure out how long it is
+	nframes = aw.getnframes()
+	#Read all of it as a string
+	data= aw.readframes(nframes)
+	#Convert this string to an array of pairs of 16bit integers -- so each item is [a,b] where -32768<a,b<32767 one sample per channel, 
+	#unless of course your data is mono in which case it wont be a pair...
+	data = array.array("h", data)
+	params = aw.getparams()
+	aw.close
+	return (data,params)
+def write_vector_as_wav(data,name,pram):
+	"""writes a wav file: data is an array (as in array.array()) of numerics, name is just a string,pram""" 
+	aw = wave.open(name+'.wav','w')
+	aw.setparams(pram)
+	aw.writeframes(data.tostring())
+	aw.close
+def test(inputfile):
+	a = read_wav_as_array(source)
+	print a[1]
+	print a[0][:5]
+	write_vector_as_wav(a[0],'test.wav',a[1])
+def dumpaudiovector():
+	pass
+		
+if __name__=="__main__":
+	darling = read_wav_as_array("ohdarling.wav")
+	#dumpaudiovector(darling)
+	data = darling[0]
+	left= []
+	right= []
+	data = data[:44100]
+	data = fft(data)
+	for x in xrange(0,len(data),2):
+		left.append(data[x])
+		right.append(data[x+1])
+	f = open("left_fft_out.txt",'w')
+	f.write('\n'.join([str(x) for x in left]))
+	f.close()

@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf350
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww14440\viewh8040\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 # chord_1[1] = root of first chord, chord_1[2]=third of first chord, chord_1[3]=fifth\
+# of first chord...chord_1[7]=thirteenth of first chord, chord_\{len(song)\}[1] = root of \
+# last chord; can we write chord[1,1]...chord[len(song),7]?\
+\
+song=[]		#frequencies need to be normalized so they are minimal; this will remove the need for j in pcp(k)\
+chord=[][]\
+for i in range(1, len(song)):\
+	chord[i][1].append(root(song[i]))		#no information besides naming; just a reference point\
+	chord[i][2].append(third(song[i]))		#min, maj\
+	chord[i][3].append(fifth(song[i]))		#min, maj, aug, dim\
+	chord[i][4].append(seventh(song[i]))	#min7 or maj7\
+	chord[i][5].append(ninth(song[i]))		#boolean\
+	chord[i][6].append(eleventh(song[i]))	#boolean\
+	chord[i][7].append(thirteenth(song[i]))	#boolean\
+\
+def pcp(chord[k][l]):\
+   low = 27.5 - 2**(1/12)*27.5\
+   high = 27.5 + 2**(1/12)*27.5\
+	for k in range(1, len(A)+1):\
+		for l in range(1, 8):\
+			for i in range(0, 12):\
+	 		       for j in range(0, 11):\
+	 	    		  if low*2**(j+i/12) < chord[k,l] <high*2**(j+i/12):\
+					pcp(chord[k,l])=(10+i)mod12\
+					return pcp(chord[k][l])\
+def buildchord(chord[k,1],chord[k,2],chord[k,3],chord[k,4],chord[k,5],chord[k,6], chord[k,7]):\
+    for k in range(1, len(song)+1):\
+	if pcp(chord[k,2])=none:\
+		if pcp(chord[k,3])=(pcp(chord[k,1])+7)mod12:\
+			x = pcp(chord[k,1])+'maj'\
+		elif pcp(chord[k,3])=(pcp(chord[k,1])+6)mod12:\
+			x = pcp(chord[k,1])+'dim'\
+		elif pcp(chord[k,3])=(pcp(chord[k,1])+8)mod12:\
+			x = pcp(chord[k,1])+'aug'\
+	if pcp(chord[k,1])=(pcp(chord[k,2])+3)mod12 :\
+		if (pcp(chord[k,1])+7)mod12 = pcp(chord[k,3]) or if chord[k,3]=none:\
+			x = pcp(chord[k,1])+'min'\
+		elif (pcp(chord[k,1])+6)mod12 = pcp(chord[k,3]):\
+			x = pcp(chord[k,1])+'dim'\
+	if pcp(chord[k,1])=(pcp(chord[k,2])+4)mod12:\
+		if (pcp(chord[k,1])+8)mod12=pcp(chord[k,3]):\
+			x = pcp(chord[k,1])+'aug'\
+		else: x=pcp(chord[k,1])+'maj'\
+	if pcp(chord[k,4]) !=none:\
+		if pcp(chord(k,4])=(pcp(chord[k,1])+10)mod12:\
+			x = x + 'min7'\
+		if pcp(chord[k,4])=(pcp(chord[k,1])+11)mod12:\
+			x = x + 'maj7'\
+	if pcp(chord[k,5]) != none:\
+		x = x + '9'\
+	if pcp(chord[k,6]) != none:\
+		x = x + '11'\
+	if pcp(chord[k,7]) != none:\
+		x = x + '13'\
+	return x\
+}

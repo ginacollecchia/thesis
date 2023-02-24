@@ -1,0 +1,102 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf430
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 C=0\
+C#=1\
+D=2\
+D#=3\
+E=4\
+F=5\
+F#=6\
+G=7\
+G#=8\
+A=9\
+A#=10\
+B=11\
+\
+#major keys=0 thru 11, minor keys =12 thru 23\
+for j in range(0,24):\
+	key.append(j)\
+\
+query "What is the key in pitch class value, where 0 through 11 denote the major keys C through B major, and 12 through 23 denote the minor keys C through B minor?"; j\
+\
+I=[(0+key[j])%12, (4+key[j])%12, (7+key[j])%12, -1, -1]\
+Isev=[(0+key[j])%12, (4+key[j])%12, (7+key[j])%12, (10+key[j])%12, (11+key[j])%12]\
+Iaug=[(0+key[j])%12, (4+key[j])%12, (8+key[j])%12, -1, -1]\
+Iaugsev=[(0+key[j])%12, (4+key[j])%12, (8+key[j])%12, (11+key[j])%12, -1]\
+littlei=[(0+key[j])%12, (3+key[j])%12, (7+key[j])%12, -1, -1]\
+littleisev=[(0+key[j])%12, (3+key[j])%12, (7+key[j])%12, (10+key[j])%12, (11+key[j])%12]\
+bii=[(1+key[j])%12, (5+key[j])%12, (8+key[j])%12, -1, -1]\
+biisev=[(1+key[j])%12, (5+key[j])%12, (8+key[j])%12, (11+key[j])%12, (0+key[j])%12]\
+littleii=[(2+key[j])%12, (5+key[j])%12, (9+key[j])%12, -1, -1]\
+littleiisev=[(2+key[j])%12, (5+key[j])%12, (9+key[j])%12, (0+key[j])%12, (1+key[j])%12]\
+iidim=[(2+key[j])%12, (5+key[j])%12, (8+key[j])%12, -1,-1]\
+iidimsev=[(2+key[j])%12, (5+key[j])%12, (8+key[j])%12, (11+key[j])%12, (0+key[j])%12]\
+III=[(3+key[j])%12, (7+key[j])%12, (10+key[j])%12, -1, -1]\
+IIIsev=[(3+key[j])%12, (7+key[j])%12, (10+key[j])%12, (1+key[j])%12, (2+key[j])%12]\
+IIIaug=[(3+key[j])%12, (7+key[j])%12, (11+key[j])%12, -1, -1]\
+IIIaugsev=[(3+key[j])%12, (7+key[j])%12, (11+key[j])%12, (2+key[j])%12, -1]\
+littleiii=[(4+key[j])%12, (7+key[j])%12, (11+key[j])%12, -1, -1]\
+littleiiisev=[(4+key[j])%12, (7+key[j])%12, (11+key[j])%12, (2+key[j])%12, (3+key[j])%12]\
+IV=[(5+key[j])%12, (9+key[j])%12, (0+key[j])%12, -1, -1]\
+IVsev=[[(5+key[j])%12, (9+key[j])%12, (0+key[j])%12, (3+key[j])%12, (4+key[j])%12]\
+IVaug=[(5+key[j])%12, (9+key[j])%12, (1+key[j])%12, -1, -1]\
+IVaugsev=[(5+key[j])%12, (9+key[j])%12, (1+key[j])%12, (4+key[j])%12, -1]\
+littleiv=[(5+key[j])%12, (8+key[j])%12, (0+key[j])%12, -1, -1]\
+littleivsev=IVsev=[[(5+key[j])%12, (8+key[j])%12, (0+key[j])%12, (3+key[j])%12, (4+key[j])%12]\
+V=[(7+key[j])%12, (11+key[j])%12, (2+key[j])%12, -1, -1]\
+Vsev=[(7+key[j])%12, (11+key[j])%12, (2+key[j])%12, (5+key[j])%12, (6+key[j])%12)]\
+Vaug=[(7+key[j])%12, (11+key[j])%12, (3+key[j])%12, -1, -1]\
+Vaugsev=[(7+key[j])%12, (11+key[j])%12, (3+key[j])%12, (6+key[j])%12, -1]\
+littlev=[(7+key[j])%12, (10+key[j])%12, (2+key[j])%12, -1, -1]\
+littlevsev=[(7+key[j])%12, (10+key[j])%12, (2+key[j])%12, (5+key[j])%12, (6+key[j])%12)]\
+VI=[(8+key[j])%12, (0+key[j])%12, (3+key[j])%12, -1, -1]\
+VIsev=[(8+key[j])%12, (0+key[j])%12, (3+key[j])%12, (6+key[j])%12, (7+key[j])%12]\
+VIaug=[(8+key[j])%12, (0+key[j])%12, (4+key[j])%12, -1, -1]\
+VIaugsev=[(8+key[j])%12, (0+key[j])%12, (4+key[j])%12, (7+key[j])%12, -1]\
+littlevi=[(9+key[j])%12, (0+key[j])%12, (4+key[j])%12, -1, -1]\
+littlevisev=[(9+key[j])%12, (0+key[j])%12, (4+key[j])%12, (7+key[j])%12, (8+key[j])%12]\
+VII=[(10+key[j])%12, (2+key[j])%12, (5+key[j])%12, -1, -1]\
+VIIsev=[(10+key[j])%12, (2+key[j])%12, (5+key[j])%12, (8+key[j])%12, (9+key[j])%12]\
+VIIaug=[(10+key[j])%12, (2+key[j])%12, (6+key[j])%12, -1, -1]\
+VIIaugsev=[(10+key[j])%12, (2+key[j])%12, (6+key[j])%12, (9+key[j])%12, -1]\
+viidim=[(11+key[j])%12, (2+key[j])%12, (5+key[j])%12, -1,-1]\
+viidimsev=[(11+key[j])%12, (2+key[j])%12, (5+key[j])%12, (8+key[j])%12, (9+key[j])%12]\
+VofV=[(2+key[j])%12, (6+key[j])%12, (9+key[j])%12, -1,-1]\
+VofVsev=[(2+key[j])%12, (6+key[j])%12, (9+key[j])%12, (0+key[j])%12, (1+key[j])%12]\
+littlevofV=[(2+key[j])%12, (5+key[j])%12, (9+key[j])%12, -1,-1]\
+littlevofVsev=[(2+key[j])%12, (5+key[j])%12, (9+key[j])%12, (0+key[j])%12, (1+key[j])%12]\
+Vofvi=[(4+key[j])%12, (8+key[j])%12, (11+key[j])%12, -1,-1]\
+Vofvisev=[(4+key[j])%12, (8+key[j])%12, (11+key[j])%12, (2+key[j])%12, (3+key[j])%12]\
+Vofiii=[(11+key[j])%12, (3+key[j])%12, (6+key[j])%12, -1, -1]\
+Vofiiisev=[(11+key[j])%12, (3+key[j])%12, (6+key[j])%12, (9+key[j])%12, (10+key[j])%12]\
+Vofii=[(9+key[j])%12, (1+key[j])%12, (4+key[j])%12, -1, -1]\
+Vofiisev=[(9+key[j])%12, (1+key[j])%12, (4+key[j])%12, (7+key[j])%12, (8+key[j])%12]\
+Vofviidim=[(6+key[j])%12, (10+key[j])%12, (1+key[j])%12, -1, -1]\
+Vofviidimsev=[(6+key[j])%12, (10+key[j])%12, (1+key[j])%12, (4+key[j])%12, (5+key[j])%12]\
+viidimofV=[(6+key[j])%12, (9+key[j])%12, (0+key[j])%12, -1, -1]\
+viidimofVsev=[(6+key[j])%12, (9+key[j])%12, (0+key[j])%12, (3+key[j])%12, (4+key[j])%12]\
+viidimofii=[(1+key[j])%12, (4+key[j])%12, (7+key[j])%12, -1, -1]\
+viidimofiisev=[(1+key[j])%12, (4+key[j])%12, (7+key[j])%12, (10+key[j])%12, (11+key[j])%12]\
+viidimofIV=[(5+key[j])%12, (8+key[j])%12, (11+key[j])%12, -1, -1]\
+viidimofIVsev=[(5+key[j])%12, (8+key[j])%12, (11+key[j])%12, (2+key[j])%12, (3+key[j])%12]\
+viidimofbII=[(0+key[j])%12, (3+key[j])%12, (6+key[j])%12, -1, -1]\
+viidimofbIIsev=[(0+key[j])%12, (3+key[j])%12, (6+key[j])%12, (9+key[j])%12, (10+key[j])%12]\
+viidimofiii=[(3+key[j])%12, (6+key[j])%12, (9+key[j])%12, -1, -1]\
+viidimofiiisev=[(3+key[j])%12, (6+key[j])%12, (9+key[j])%12, (0+key[j])%12, (1+key[j])%12]\
+littlevofiii=[(11+key[j])%12, (2+key[j])%12, (6+key[j])%12, -1, -1]\
+littlevofiiisev=[(11+key[j])%12, (2+key[j])%12, (6+key[j])%12, (9+key[j])%12, (10+key[j])%12]\
+ivofiv=[(10+key[j])%12, (1+key[j])%12, (5+key[j])%12, -1, -1]\
+ivofivsev=[(10+key[j])%12, (1+key[j])%12, (5+key[j])%12, (8+key[j])%12, (9+key[j])%12]\
+viidimofVI=[(7+key[j])%12, (10+key[j])%12, (1+key[j])%12, -1, -1]\
+viidimofVIsev=[(7+key[j])%12, (10+key[j])%12, (1+key[j])%12, (4+key[j])%12, (5+key[j])%12]\
+viidimofVII=[(9+key[j])%12, (0+key[j])%12, (3+key[j])%12, -1, -1]\
+viidimofVIIsev=[(9+key[j])%12, (0+key[j])%12, (3+key[j])%12, (6+key[j])%12, (7+key[j])%12]\
+\
+\
+\
+\
+}
